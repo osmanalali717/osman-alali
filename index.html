@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Forces mobile browsers to adapt directly to the phone's native dimensions -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Osman Al Ali | Developer Portfolio</title>
     
@@ -10,44 +9,60 @@
     <meta name="description" content="Osman Al Ali - Web Developer Portfolio. Official website for Osman Al Ali based in Beirut, Lebanon.">
     <meta name="keywords" content="Osman Al Ali, Web Developer Beirut, Full Stack Developer Lebanon, Portfolio">
     
-    <!-- Open Graph / Facebook / WhatsApp Meta Tags -->
+    <!-- Open Graph Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://github.io">
     <meta property="og:title" content="Osman Al Ali | Developer Portfolio">
     <meta property="og:description" content="Official developer portfolio for Osman Al Ali. Designing, scripting, and deploying elite web platforms.">
     <meta property="og:image" content="https://github.iologo.png">
 
-    <!-- High version cache bust query to clear old design logs on next refresh -->
-    <link rel="stylesheet" href="style.css?v=250">
+    <!-- High cache bust query to load everything fresh -->
+    <link rel="stylesheet" href="style.css?v=500">
 </head>
 <body>
 
-    <!-- Top Laser Accent Line -->
     <div class="laser-top-line"></div>
-
-    <!-- Background Ambient Glow Effects -->
     <div class="ambient-glow spot-1"></div>
     <div class="ambient-glow bg-glow-2"></div>
 
-    <!-- Fixed Header Split Navbar Row -->
+    <!-- Fixed Header split Navbar Row -->
     <header>
         <div class="header-container">
-            <div class="nav-wing-left">
+            <!-- Left Wing Desktop Link -->
+            <div class="nav-wing-left desktop-only">
                 <a href="#home" class="menu-anchor active">Home</a>
                 <a href="#projects" class="menu-anchor">Creations</a>
             </div>
 
-            <!-- Perfect circular geometric logo center slot -->
+            <!-- Perfect circular logo center slot -->
             <div class="portfolio-logo-box">
                 <img src="logo.png" alt="Osman Logo" class="brand-logo-img">
             </div>
             
-            <div class="nav-wing-right">
+            <!-- Right Wing Desktop Links -->
+            <div class="nav-wing-right desktop-only">
                 <a href="#connect" class="menu-anchor">Connect</a>
                 <a href="mailto:oa2307368@gmail.com" class="social-nav-link">Email</a>
                 <a href="https://linkedin.com" target="_blank" class="social-nav-link">LinkedIn</a>
                 <a href="https://github.com" target="_blank" class="social-nav-link">GitHub</a>
             </div>
+
+            <!-- 🟢 Hamburger Icon (Mbayyan BAS 3al Phone) -->
+            <button class="hamburger-menu" id="hamburgerBtn" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+
+        <!-- 🟢 Mobile Dropdown Menu Drawer -->
+        <div class="mobile-nav-drawer" id="mobileDrawer">
+            <a href="#home" class="mobile-menu-link">Home</a>
+            <a href="#projects" class="mobile-menu-link">Creations</a>
+            <a href="#connect" class="mobile-menu-link">Connect</a>
+            <a href="mailto:oa2307368@gmail.com" class="mobile-menu-link">Email</a>
+            <a href="https://linkedin.com" target="_blank" class="mobile-menu-link">LinkedIn</a>
+            <a href="https://github.com" target="_blank" class="mobile-menu-link">GitHub</a>
         </div>
     </header>
 
@@ -59,7 +74,6 @@
             </div>
             <h1 class="hero-name">Osman<br>Al Ali</h1>
             
-            <!-- Dynamic Typewriter Automated Banner Container -->
             <div class="dynamic-text-box">
                 <span class="static-prefix">I am a </span>
                 <span id="dynamic-target" class="text-glow-green">Full-Stack Developer</span>
@@ -75,7 +89,6 @@
             </div>
         </div>
 
-        <!-- Tech Matrix Card Modules Chassis -->
         <div class="matrix-panel">
             <div class="matrix-header">
                 <h3>ENGINEERING MODULES</h3>
@@ -138,7 +151,6 @@
         </div>
 
         <div class="split-connect-row">
-            <!-- Left Info Panel Column Box -->
             <div class="side-metadata-protocol-card">
                 <div class="watermark-logo-bg">
                     <img src="logo.png" alt="O Accent">
@@ -166,7 +178,6 @@
                 </div>
             </div>
 
-            <!-- Right Secure Inputs Contact Column Block Connected Directly to Formspree Inbox -->
             <div class="interactive-form-box">
                 <form id="contactForm" action="https://formspree.io" method="POST">
                     <div class="form-input-field">
@@ -187,7 +198,6 @@
         </div>
     </section>
 
-    <!-- Terminal Footer Block -->
     <footer>
         <p>BUILD_2026 // ENG_PROT_v5.2.0 // OSMAN_AL_ALI</p>
     </footer>
