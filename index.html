@@ -16,8 +16,8 @@
     <meta property="og:description" content="Official developer portfolio for Osman Al Ali. Designing, scripting, and deploying elite web platforms.">
     <meta property="og:image" content="https://github.iologo.png">
 
-    <!-- High Cache Busting Query v=500 kermal yimsah el cache dghre -->
-    <link rel="stylesheet" href="style.css?v=500">
+    <!-- Cache Busting to build fresh cache instantly -->
+    <link rel="stylesheet" href="style.css?v=600">
 </head>
 <body>
 
@@ -31,8 +31,8 @@
     <!-- Fixed Header Split Navbar Row -->
     <header>
         <div class="header-container">
-            <!-- PC Left Wing Links -->
-            <div class="nav-wing-left">
+            <!-- Left Wing Links (Hidden on Mobile, Visible on Desktop) -->
+            <div class="nav-wing-left desktop-only">
                 <a href="#home" class="menu-anchor active">Home</a>
                 <a href="#projects" class="menu-anchor">Creations</a>
             </div>
@@ -41,31 +41,33 @@
             <div class="portfolio-logo-box">
                 <img src="logo.png" alt="Osman Logo" class="brand-logo-img">
             </div>
+
+            <!-- Hamburger Button for Phone Screen Viewports Only -->
+            <button class="hamburger-menu-btn" id="menuToggleBtn" aria-label="Toggle Navigation Menu">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
             
-            <!-- PC Right Wing Links -->
-            <div class="nav-wing-right">
+            <!-- Right Wing Links (Hidden on Mobile, Visible on Desktop) -->
+            <div class="nav-wing-right desktop-only">
                 <a href="#connect" class="menu-anchor">Connect</a>
                 <a href="mailto:oa2307368@gmail.com" class="social-nav-link">Email</a>
                 <a href="https://linkedin.com" target="_blank" class="social-nav-link">LinkedIn</a>
                 <a href="https://github.com" target="_blank" class="social-nav-link">GitHub</a>
             </div>
-
-            <!-- Mobile Hamburger Menu Button (Mbayyan bas 3al Phone) -->
-            <button class="hamburger-menu" id="hamburgerBtn" aria-label="Toggle Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
         </div>
 
-        <!-- Mobile Dropdown Sidebar Menu Slot -->
-        <div class="nav-wings-mobile" id="mobileMenu">
-            <a href="#home" class="mobile-menu-link">Home</a>
-            <a href="#projects" class="mobile-menu-link">Creations</a>
-            <a href="#connect" class="mobile-menu-link">Connect</a>
-            <a href="mailto:oa2307368@gmail.com" class="mobile-menu-link highlight-green">Email</a>
-            <a href="https://linkedin.com" target="_blank" class="mobile-menu-link">LinkedIn</a>
-            <a href="https://github.com" target="_blank" class="mobile-menu-link">GitHub</a>
+        <!-- 📱 Mobile Dropdown Overlay Panel Grid Container -->
+        <div class="mobile-nav-overlay" id="mobileNavMenu">
+            <div class="mobile-overlay-links">
+                <a href="#home" class="mobile-overlay-anchor">Home</a>
+                <a href="#projects" class="mobile-overlay-anchor">Creations</a>
+                <a href="#connect" class="mobile-overlay-anchor">Connect</a>
+                <a href="mailto:oa2307368@gmail.com" class="mobile-overlay-anchor">Email</a>
+                <a href="https://linkedin.com" target="_blank" class="mobile-overlay-anchor">LinkedIn</a>
+                <a href="https://github.com" target="_blank" class="mobile-overlay-anchor">GitHub</a>
+            </div>
         </div>
     </header>
 
@@ -189,19 +191,11 @@
                 <form id="contactForm" action="https://formspree.io" method="POST">
                     <div class="form-input-field">
                         <label>User Identity / Firm Designation</label>
-                        <input type="text" name="name" placeholder="Full Name" required>
+                        <input type="text" name="name" class="matrix-input" placeholder="Full Name" required autocomplete="off">
                     </div>
                     <div class="form-input-field">
                         <label>Return Mail Routing</label>
-                        <input type="email" name="email" placeholder="name@domain.com" required>
+                        <input type="email" name="email" class="matrix-input" placeholder="name@domain.com" required autocomplete="off">
                     </div>
                     <div class="form-input-field">
                         <label>Payload Brief Requirements</label>
-                        <textarea name="message" rows="5" placeholder="Describe the web application goals..." required></textarea>
-                    </div>
-                    <button type="submit" class="submit-action-btn">Transmit Secure Proposal</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
