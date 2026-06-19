@@ -1,87 +1,68 @@
-// 1. DYNAMIC TYPEWRITER ANIMATION FOR HERO BANNER
-const targetSpan = document.getElementById("dynamic-target");
-const words = ["Full-Stack Developer", "Frontend Engineer", "Web UI Designer"];
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
+document.addEventListener('DOMContentLoaded', () => {
+    // ==== 1. كود تشغيل أزرار الـ TABS للـ MODULES ====
+    const tabButtons = document.querySelectorAll('.selector-tabs-grid .tab-btn');
+    const displayCard = document.getElementById('displayCard');
 
-function typeAnimation() {
-    const currentWord = words[wordIndex];
-    
-    if (isDeleting) {
-        targetSpan.textContent = currentWord.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        targetSpan.textContent = currentWord.substring(0, charIndex + 1);
-        charIndex++;
-    }
+    const stackData = {
+        frontend: {
+            headline: "Frontend Engineering",
+            description: "Building responsive user viewports with valid HTML5 structural frameworks and modular layout styles.",
+            tags: ["HTML5", "CSS3 Layouts", "JavaScript"]
+        },
+        backend: {
+            headline: "Server Logic",
+            description: "Building secure backend data pathways, asynchronous server routines, and optimizing database environments.",
+            tags: ["Node.js", "Express", "APIs", "Databases"]
+        },
+        agile: {
+            headline: "Agile Tracks",
+            description: "Coordinating software engineering sprints, task workflows, and managing project deployment timelines.",
+            tags: ["Jira Software", "Sprints", "Workflows"]
+        }
+    };
 
-    let typeSpeed = isDeleting ? 50 : 100;
-
-    if (!isDeleting && charIndex === currentWord.length) {
-        typeSpeed = 1500; // Pause at full word
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-        typeSpeed = 500; // Pause before typing next word
-    }
-
-    setTimeout(typeAnimation, typeSpeed);
-}
-
-// 2. TECH MODULES DATA & TAB SWITCHER LOGIC
-const stackData = {
-    frontend: {
-        headline: "Frontend Engineering",
-        description: "Building responsive user viewports with valid HTML5 structural frameworks and modular layout styles.",
-        tags: ["HTML5", "CSS3 Layouts", "JavaScript"]
-    },
-    backend: {
-        headline: "Server-Side Logic",
-        description: "Developing secure backend application data pathways, API endpoints, and microservice routines.",
-        tags: ["Node.js", "Express", "NPM Modules"]
-    },
-    agile: {
-        headline: "Agile Project Tracks",
-        description: "Coordinating software development sprints, tasks workflows, and team deployment inside structured Jira spaces.",
-        tags: ["Jira Software", "Scrum Workflows", "Git"]
-    }
-};
-
-const displayCard = document.getElementById("displayCard");
-const tabButtons = document.querySelectorAll(".tab-btn");
-
-tabButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        // Remove active class from all buttons
-        tabButtons.forEach(btn => btn.classList.remove("active"));
-        // Add active class to clicked button
-        button.classList.add("active");
-        
-        // Get stack key
-        const stackKey = button.getAttribute("data-stack");
-        const data = stackData[stackKey];
-        
-        // Update display card content with animation fade effect
-        displayCard.style.opacity = 0;
-        setTimeout(() => {
-            displayCard.querySelector(".card-headline").textContent = data.headline;
-            displayCard.querySelector(".card-description").textContent = data.description;
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
             
-            // Rebuild tags row
-            const tagsRow = displayCard.querySelector(".card-tags-row");
-            tagsRow.innerHTML = data.tags.map(tag => `<span>${tag}</span>`).join("");
+            const currentStack = button.getAttribute('data-stack');
+            const data = stackData[currentStack];
             
-            displayCard.style.opacity = 1;
-        }, 150);
+            if (data) {
+                displayCard.querySelector('.card-headline').textContent = data.headline;
+                displayCard.querySelector('.card-description').textContent = data.description;
+                
+                const tagsRow = displayCard.querySelector('.card-tags-row');
+                tagsRow.innerHTML = '';
+                
+                data.tags.forEach(tag => {
+                    const span = document.createElement('span');
+                    span.textContent = tag;
+                    tagsRow.appendChild(span);
+                });
+            }
+        });
     });
-});
 
-// START ALL PROTOCOLS ON LOAD
-document.addEventListener("DOMContentLoaded", () => {
-    // Add CSS transition for smooth tab switching
-    displayCard.style.transition = "opacity 0.15s ease";
-    // Initialize Typewriter
-    setTimeout(typeAnimation, 1000);
+    // ==== 2. كود تشغيل منيو الموبايل (HAMBURGER MENU) ====
+    const mobileMenuTrigger = document.getElementById('mobileMenuTrigger');
+    const mobileOverlayMenu = document.getElementById('mobileOverlayMenu');
+    const overlayAnchors = document.querySelectorAll('.overlay-anchor');
+
+    if (mobileMenuTrigger && mobileOverlayMenu) {
+        // فتح وقفل المنيو عند كبس الزر
+        mobileMenuTrigger.addEventListener('click', () => {
+            mobileOverlayMenu.classList.toggle('active');
+            mobileMenuTrigger.classList.toggle('open');
+        });
+
+        // قفل المنيو تلقائياً بس تكبس على أي رابط بقلبه
+        overlayAnchors.forEach(anchor => {
+            anchor.addEventListener('click', () => {
+                mobileOverlayMenu.classList.remove('active');
+                mobileMenuTrigger.classList.remove('open');
+            });
+        });
+    }
 });
