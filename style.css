@@ -8,7 +8,10 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-html {
+html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
     scroll-behavior: smooth;
     background-color: #060a07;
     color: #e2f4e7;
@@ -16,9 +19,9 @@ html {
 
 body {
     min-height: 100vh;
-    overflow-x: hidden;
     position: relative;
     letter-spacing: 0.3px;
+    -webkit-text-size-adjust: 100%; /* Fixes In-App Text Scaling */
 }
 
 /* Top Laser Line */
@@ -269,5 +272,3 @@ header {
 .form-input-field input:focus, .form-input-field textarea:focus { border-color: #00ff66; box-shadow: 0 0 12px rgba(0, 255, 102, 0.15); }
 
 .submit-action-btn { width: 100%; padding: 16px; background: transparent; border: 1px solid #00ff66; color: #00ff66; font-weight: 700; cursor: pointer; text-transform: uppercase; border-radius: 4px; transition: all 0.3s ease; }
-.submit-action-btn:hover { background: #00ff66; color: #060a07; box-shadow: 0 0 25px rgba(0, 255, 102, 0.3); }
-
