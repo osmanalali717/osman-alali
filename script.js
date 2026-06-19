@@ -1,53 +1,87 @@
-// Database Dictionary holding information matrix blocks for instant loading sequences
-const infoMatrix = {
+// 1. DYNAMIC TYPEWRITER ANIMATION FOR HERO BANNER
+const targetSpan = document.getElementById("dynamic-target");
+const words = ["Full-Stack Developer", "Frontend Engineer", "Web UI Designer"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeAnimation() {
+    const currentWord = words[wordIndex];
+    
+    if (isDeleting) {
+        targetSpan.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        targetSpan.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+    }
+
+    let typeSpeed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && charIndex === currentWord.length) {
+        typeSpeed = 1500; // Pause at full word
+        isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        typeSpeed = 500; // Pause before typing next word
+    }
+
+    setTimeout(typeAnimation, typeSpeed);
+}
+
+// 2. TECH MODULES DATA & TAB SWITCHER LOGIC
+const stackData = {
     frontend: {
-        title: "Frontend Systems",
-        desc: "React Framework ecosystem featuring optimized layout hooks and fluid responsive state workflows.",
-        tags: ["SPAs", "State Logs", "Components"]
+        headline: "Frontend Engineering",
+        description: "Building responsive user viewports with valid HTML5 structural frameworks and modular layout styles.",
+        tags: ["HTML5", "CSS3 Layouts", "JavaScript"]
     },
     backend: {
-        title: "Backend Runtime",
-        desc: "High-concurrency systems engineered with Node.js servers, real-time sync endpoints, and API design frameworks.",
-        tags: ["Node.js", "REST APIs", "Sockets"]
+        headline: "Server-Side Logic",
+        description: "Developing secure backend application data pathways, API endpoints, and microservice routines.",
+        tags: ["Node.js", "Express", "NPM Modules"]
     },
-    architecture: {
-        title: "Data Clusters",
-        desc: "Robust storage strategies featuring structured SQL pipelines paired with optimized NoSQL document caches.",
-        tags: ["MongoDB", "MySQL", "Indexing"]
+    agile: {
+        headline: "Agile Project Tracks",
+        description: "Coordinating software development sprints, tasks workflows, and team deployment inside structured Jira spaces.",
+        tags: ["Jira Software", "Scrum Workflows", "Git"]
     }
 };
 
-const controlNodes = document.querySelectorAll('.control-node');
-const cardTitle = document.querySelector('.card-title');
-const cardDesc = document.querySelector('.card-desc');
-const cardTagsContainer = document.querySelector('.card-footer-tags');
-const displayCard = document.getElementById('displayCard');
+const displayCard = document.getElementById("displayCard");
+const tabButtons = document.querySelectorAll(".tab-btn");
 
-controlNodes.forEach(node => {
-    node.addEventListener('click', () => {
-        // Drop any active markers from selection collections array
-        controlNodes.forEach(btn => btn.classList.remove('active'));
-        node.classList.add('active');
+tabButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        // Remove active class from all buttons
+        tabButtons.forEach(btn => btn.classList.remove("active"));
+        // Add active class to clicked button
+        button.classList.add("active");
         
-        const key = node.getAttribute('data-stack');
+        // Get stack key
+        const stackKey = button.getAttribute("data-stack");
+        const data = stackData[stackKey];
         
-        if (infoMatrix[key]) {
-            // Re-trigger clean CSS keyframe animation entry on data load
-            displayCard.style.animation = 'none';
-            displayCard.offsetHeight; // Forces DOM element reflow update
-            displayCard.style.animation = 'slideUpAnimation 0.4s ease-out';
-
-            // Inject targeted text contents updates
-            cardTitle.textContent = infoMatrix[key].title;
-            cardDesc.textContent = infoMatrix[key].desc;
+        // Update display card content with animation fade effect
+        displayCard.style.opacity = 0;
+        setTimeout(() => {
+            displayCard.querySelector(".card-headline").textContent = data.headline;
+            displayCard.querySelector(".card-description").textContent = data.description;
             
-            // Build the clean array list tag collection dynamically inside loop passes
-            cardTagsContainer.innerHTML = '';
-            infoMatrix[key].tags.forEach(tagText => {
-                const spanTag = document.createElement('span');
-                spanTag.textContent = tagText;
-                cardTagsContainer.appendChild(spanTag);
-            });
-        }
+            // Rebuild tags row
+            const tagsRow = displayCard.querySelector(".card-tags-row");
+            tagsRow.innerHTML = data.tags.map(tag => `<span>${tag}</span>`).join("");
+            
+            displayCard.style.opacity = 1;
+        }, 150);
     });
+});
+
+// START ALL PROTOCOLS ON LOAD
+document.addEventListener("DOMContentLoaded", () => {
+    // Add CSS transition for smooth tab switching
+    displayCard.style.transition = "opacity 0.15s ease";
+    // Initialize Typewriter
+    setTimeout(typeAnimation, 1000);
 });
