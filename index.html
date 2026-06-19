@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- 🟢 Hal line bi-khalli el website ya3rif eza PC aw Phone kermal yrayyis el shasheh -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
     <title>Osman Al Ali | Developer Portfolio</title>
     
     <!-- Google SEO Optimization Tags -->
@@ -18,8 +16,8 @@
     <meta property="og:description" content="Official developer portfolio for Osman Al Ali. Designing, scripting, and deploying elite web platforms.">
     <meta property="og:image" content="https://github.iologo.png">
 
-    <!-- Linked to style.css with cache busting updated to v=27 -->
-    <link rel="stylesheet" href="style.css?v=27">
+    <!-- Cache Busting Link Version v=150 kermal ybayan dghre -->
+    <link rel="stylesheet" href="style.css?v=150">
 </head>
 <body>
 
@@ -150,7 +148,7 @@
                     <ul class="metadata-list">
                         <li>
                             <strong>LOCATION NODE:</strong>
-                            <p>Jnah, Soltan Brahim, Beirut, Lebanon</p>
+                            <p>Beirut, Lebanon</p>
                         </li>
                         <li>
                             <strong>SECURE ROUTE MAIL:</strong>
@@ -167,20 +165,20 @@
                 </div>
             </div>
 
-            <!-- Right Secure Inputs Contact Column Block -->
+            <!-- 🔴 Right Contact Form - Now perfectly routed to your direct inbox -->
             <div class="interactive-form-box">
-                <form id="contactForm">
+                <form id="contactForm" action="https://formspree.io" method="POST">
                     <div class="form-input-field">
                         <label>User Identity / Firm Designation</label>
-                        <input type="text" placeholder="Full Name" required>
+                        <input type="text" name="name" placeholder="Full Name" required>
                     </div>
                     <div class="form-input-field">
                         <label>Return Mail Routing</label>
-                        <input type="email" placeholder="name@domain.com" required>
+                        <input type="email" name="email" placeholder="name@domain.com" required>
                     </div>
                     <div class="form-input-field">
                         <label>Payload Brief Requirements</label>
-                        <textarea rows="5" placeholder="Describe the web application goals..." required></textarea>
+                        <textarea name="message" rows="5" placeholder="Describe the web application goals..." required></textarea>
                     </div>
                     <button type="submit" class="submit-action-btn">Transmit Secure Proposal</button>
                 </form>

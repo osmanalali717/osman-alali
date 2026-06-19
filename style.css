@@ -21,7 +21,7 @@ body {
     min-height: 100vh;
     position: relative;
     letter-spacing: 0.3px;
-    -webkit-text-size-adjust: 100%; /* Fixes In-App Text Scaling */
+    -webkit-text-size-adjust: 100%;
 }
 
 /* Top Laser Line */
