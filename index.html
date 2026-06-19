@@ -16,7 +16,7 @@
     <meta property="og:description" content="Official developer portfolio for Osman Al Ali. Designing, scripting, and deploying elite web platforms.">
     <meta property="og:image" content="https://github.iologo.png">
 
-    <!-- Cache Busting to build fresh cache instantly -->
+    <!-- High version query to drop cache memory instantly on browsers -->
     <link rel="stylesheet" href="style.css?v=600">
 </head>
 <body>
@@ -28,11 +28,11 @@
     <div class="ambient-glow spot-1"></div>
     <div class="ambient-glow bg-glow-2"></div>
 
-    <!-- Fixed Header Split Navbar Row -->
+    <!-- Fixed Header Navbar Row -->
     <header>
         <div class="header-container">
-            <!-- Left Wing Links (Hidden on Mobile, Visible on Desktop) -->
-            <div class="nav-wing-left desktop-only">
+            <!-- Left Navigation Wings -->
+            <div class="nav-wing-left desktop-nav">
                 <a href="#home" class="menu-anchor active">Home</a>
                 <a href="#projects" class="menu-anchor">Creations</a>
             </div>
@@ -41,35 +41,38 @@
             <div class="portfolio-logo-box">
                 <img src="logo.png" alt="Osman Logo" class="brand-logo-img">
             </div>
-
-            <!-- Hamburger Button for Phone Screen Viewports Only -->
-            <button class="hamburger-menu-btn" id="menuToggleBtn" aria-label="Toggle Navigation Menu">
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-            </button>
             
-            <!-- Right Wing Links (Hidden on Mobile, Visible on Desktop) -->
-            <div class="nav-wing-right desktop-only">
+            <!-- Right Navigation Wings -->
+            <div class="nav-wing-right desktop-nav">
                 <a href="#connect" class="menu-anchor">Connect</a>
                 <a href="mailto:oa2307368@gmail.com" class="social-nav-link">Email</a>
                 <a href="https://linkedin.com" target="_blank" class="social-nav-link">LinkedIn</a>
                 <a href="https://github.com" target="_blank" class="social-nav-link">GitHub</a>
             </div>
-        </div>
 
-        <!-- 📱 Mobile Dropdown Overlay Panel Grid Container -->
-        <div class="mobile-nav-overlay" id="mobileNavMenu">
-            <div class="mobile-overlay-links">
-                <a href="#home" class="mobile-overlay-anchor">Home</a>
-                <a href="#projects" class="mobile-overlay-anchor">Creations</a>
-                <a href="#connect" class="mobile-overlay-anchor">Connect</a>
-                <a href="mailto:oa2307368@gmail.com" class="mobile-overlay-anchor">Email</a>
-                <a href="https://linkedin.com" target="_blank" class="mobile-overlay-anchor">LinkedIn</a>
-                <a href="https://github.com" target="_blank" class="mobile-overlay-anchor">GitHub</a>
-            </div>
+            <!-- Mobile Hamburger Toggle Trigger Menu Icon Button -->
+            <button class="hamburger-menu-btn" id="mobileMenuTrigger" aria-label="Toggle Menu">
+                <span class="bar-line"></span>
+                <span class="bar-line"></span>
+                <span class="bar-line"></span>
+            </button>
         </div>
     </header>
+
+    <!-- Mobile Fullscreen Overlay Drawer Navigation Navigation Panel Grid Chassis -->
+    <div class="mobile-overlay-navigation-panel" id="mobileOverlayMenu">
+        <div class="overlay-inner-wrapper">
+            <nav class="overlay-links-stack">
+                <a href="#home" class="overlay-anchor">Home</a>
+                <a href="#projects" class="overlay-anchor">Creations</a>
+                <a href="#connect" class="overlay-anchor">Connect</a>
+                <hr class="overlay-divider">
+                <a href="mailto:oa2307368@gmail.com" class="overlay-social-link">Email Direct</a>
+                <a href="https://linkedin.com" target="_blank" class="overlay-social-link">LinkedIn Space</a>
+                <a href="https://github.com" target="_blank" class="overlay-social-link">GitHub Source</a>
+            </nav>
+        </div>
+    </div>
 
     <!-- 1. HERO WORKSPACE MAIN DASHBOARD -->
     <main class="hero-dashboard" id="home">
@@ -191,11 +194,11 @@
                 <form id="contactForm" action="https://formspree.io" method="POST">
                     <div class="form-input-field">
                         <label>User Identity / Firm Designation</label>
-                        <input type="text" name="name" class="matrix-input" placeholder="Full Name" required autocomplete="off">
+                        <input type="text" name="name" placeholder="Full Name" required>
                     </div>
                     <div class="form-input-field">
                         <label>Return Mail Routing</label>
-                        <input type="email" name="email" class="matrix-input" placeholder="name@domain.com" required autocomplete="off">
+                        <input type="email" name="email" placeholder="name@domain.com" required>
                     </div>
                     <div class="form-input-field">
                         <label>Payload Brief Requirements</label>
