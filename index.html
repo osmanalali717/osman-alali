@@ -194,18 +194,14 @@
             <p><strong>LOCATION NODE:</strong> Beirut, Lebanon</p>
             <p><strong>ROUTING EMAIL:</strong> oa2307368@gmail.com</p>
 
-            <form action="#">
-                <label for="transmitter_name">Transmitter Name</label>
-                <input type="text" id="transmitter_name" placeholder="Enter your name..." required>
-
-                <label for="return_signal">Return Signal Email</label>
-                <input type="email" id="return_signal" placeholder="Enter your email..." required>
-
-                <label for="message_payload">Message Body Payload</label>
-                <textarea id="message_payload" rows="5" placeholder="Write your transmission signal here..." required></textarea>
-
-                <button type="submit" class="btn-prime">Send Transmission</button>
+            <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="06629a63-bacc-4de0-8caf-cad58568107b">
+            <input type="text" name="name" placeholder="Youser Name..." required>
+            <input type="email" name="email" placeholder=" Email..." required>
+            <textarea name="message" placeholder="Write your message here..." required></textarea>
+            <button type="submit">Submit</button>
             </form>
+
         </div>
     </section>
 
