@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. PREMIUM RESPONSIVE MATRIX SYSTEM - BY OSMAN AL ALI
-   ========================================================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +22,6 @@ body {
     padding-top: 85px; 
 }
 
-/* الخط الليزري العلوي الفخم */
 .laser-top-line {
     position: fixed;
     top: 0;
@@ -35,7 +32,6 @@ body {
     z-index: 1000;
 }
 
-/* الخلفيات الشفافة المضيئة */
 .ambient-glow {
     position: fixed;
     width: 300px;
@@ -142,9 +138,7 @@ header {
     text-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
 }
 
-/* ==========================================================================
-   3. HERO CONTENT VIEWPORTS & NEON PULSING
-   ========================================================================== */
+
 .hero-dashboard, .creations-section {
     max-width: 1200px;
     margin: 0 auto;
@@ -254,9 +248,7 @@ header {
     width: 0 !important;
 }
 
-/* ==========================================================================
-   4. ENGINEERING MODULES & TABS SWITCHER
-   ========================================================================== */
+
 .matrix-panel {
     background: rgba(13, 22, 16, 0.5);
     border: 1px solid rgba(0, 255, 102, 0.12);
@@ -348,9 +340,7 @@ header {
     white-space: nowrap;
 }
 
-/* ==========================================================================
-   5. ABSOLUTE VERTICAL FORM HANDLING & CRITICAL LINK MOVED COLOR FIX
-   ========================================================================== */
+
 form {
     display: flex;
     flex-direction: column;
@@ -391,16 +381,12 @@ form input:hover, form textarea:hover,
 form input:focus, form textarea:focus {
     outline: none;
 
-    /* ==========================================================================
-   6. ABSOLUTE PC & ALL DEVICES ULTRA RESPONSIBILITY (FINAL WORKED OVERLAY)
-   ========================================================================== */
 
-/* حماية وإغلاق السطر المكسور لملفك الفوق لضمان عمل الميديا كويري بنجاح */
+
 .capability-card.active { 
     display: block !important; 
 }
 
-/* 📱 وضع الهواتف الذكية كاملة العرض (iPhone, Android & All Mobile Devices) */
 @media (max-width: 767px) {
     form, .creations-section form {
         display: flex !important;
@@ -421,7 +407,6 @@ form input:focus, form textarea:focus {
     }
 }
 
-/* 📑 وضع أجهزة الآيباد والتابلت المتوسطة (iPad & All Tablets Screens) */
 @media (min-width: 768px) and (max-width: 1023px) {
     .selector-tabs-grid {
         display: grid !important;
@@ -434,13 +419,11 @@ form input:focus, form textarea:focus {
     }
 }
 
-/* 🖥️ كود إلغاء الـ Column وتشغيل الـ Grid الإجباري على جميع أجهزة الـ PC والكمبيوتر العريضة */
 @media (min-width: 1024px) {
     body { 
         padding-top: 100px !important; 
     }
     
-    /* تفكيك العمود الطولي للهيرو داشبورد وتحويله لـ Grid جانبي فخم على الـ PC */
     .hero-dashboard {
         display: grid !important;
         grid-template-columns: 1.1fr 0.9fr !important;
@@ -449,7 +432,6 @@ form input:focus, form textarea:focus {
         align-items: center !important;
     }
 
-    /* إلغاء الـ column الإجباري عن سكشن المشاريع وتحويل الكروت لـ Grid ثلاثي فورا حد بعض على الـ PC */
     .creations-section, 
     .creations-section div, 
     .creations-grid {
@@ -459,7 +441,6 @@ form input:focus, form textarea:focus {
         gap: 30px !important;
     }
     
-    /* استثناء عنوان السكشن (Commence Partnership أو Deployed Solutions) حتى لا يدخل بداخل الـ Grid الثلاثي */
     .creations-section h2, 
     .creations-section h3, 
     .creations-section .section-title,
@@ -468,7 +449,6 @@ form input:focus, form textarea:focus {
         width: 100% !important;
     }
 
-    /* موازاة الروابط العلوية في الهيدر بشكل أفقي مستقر على الـ PC وبدون اختفاء */
     #mobileMenuTrigger { 
         display: none !important; 
     }
@@ -488,41 +468,34 @@ form input:focus, form textarea:focus {
         font-size: 0.85rem !important; 
     }
 }
-/* ==========================================================================
-   6. ABSOLUTE FOR-PC DESKTOP SYSTEM OVERRIDE (FIX FOR WIDE SCREENS ONLY)
-   ========================================================================== */
 
-/* Fix and close your original broken line to unlock browser styling parser */
+
 .capability-card.active { 
     display: block !important; 
 }
 
-/* 💻 Dedicated Desktop & Wide Laptop Adjustments (Screens from 1024px and up) */
 @media (min-width: 1024px) {
     body { 
         padding-top: 100px !important; 
     }
     
-    /* Disassemble the vertical stacked column layout on PC and map into a desktop grid */
     .hero-dashboard {
         display: grid !important;
         grid-template-columns: 1.1fr 0.9fr !important;
-        flex-direction: row !important; /* Forces items side-by-side instead of a vertical list */
+        flex-direction: row !important; 
         gap: 50px !important;
         align-items: center !important;
     }
 
-    /* Target and flatten the projects section into a professional 3-column desktop layout */
     .creations-section, 
     .creations-section div, 
     .creations-grid {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
-        flex-direction: row !important; /* Destroys the mobile column stacking on PC */
+        flex-direction: row !important;
         gap: 30px !important;
     }
     
-    /* Make sure section titles and headings don't squeeze inside the columns */
     .creations-section h2, 
     .creations-section h3, 
     .creations-section .section-title,
@@ -531,7 +504,6 @@ form input:focus, form textarea:focus {
         width: 100% !important;
     }
 
-    /* Smoothly stretch tabs across the engineering module panel */
     .selector-tabs-grid {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
@@ -542,7 +514,6 @@ form input:focus, form textarea:focus {
         width: 100% !important;
     }
 
-    /* Fixed top navigation layout configuration for PC */
     #mobileMenuTrigger { 
         display: none !important; 
     }
@@ -562,18 +533,12 @@ form input:focus, form textarea:focus {
         font-size: 0.85rem !important; 
     }
 }
-/* ==========================================================================
-   6. ABSOLUTE FOR-PC SYSTEM CONFIGURATION (ROOT OVERRIDE)
-   ========================================================================== */
 
-/* Fix and close your original broken line to unlock browser parser */
 .capability-card.active { 
     display: block !important; 
 }
 
-/* --- FORCE PC GRID DESIGNS --- */
 
-/* 1. Force the main hero dashboard into side-by-side columns on laptops/desktops */
 .hero-dashboard {
     display: grid !important;
     grid-template-columns: 1.1fr 0.9fr !important;
@@ -582,7 +547,6 @@ form input:focus, form textarea:focus {
     align-items: center !important;
 }
 
-/* 2. Force the project section and project cards to display as 3 columns side-by-side */
 .creations-section, 
 .creations-grid,
 .creations-section .creations-grid {
@@ -592,7 +556,6 @@ form input:focus, form textarea:focus {
     gap: 30px !important;
 }
 
-/* 3. Keep your section main headings spanning across the full width of the desktop grid */
 .creations-section h2, 
 .creations-section h3, 
 .creations-section .section-title,
@@ -601,7 +564,6 @@ form input:focus, form textarea:focus {
     width: 100% !important;
 }
 
-/* 4. Force engineering tabs to sit beautifully side-by-side in 3 identical blocks */
 .selector-tabs-grid {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
@@ -612,7 +574,6 @@ form input:focus, form textarea:focus {
     width: 100% !important;
 }
 
-/* 5. Clean horizontal layout for the top menu bar links */
 #mobileMenuTrigger { 
     display: none !important; 
 }
