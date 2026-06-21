@@ -2,203 +2,225 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Osman Al Ali | Developer Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osman Al Ali - Premium Responsive Portfolio</title>
+     <meta name="google-site-verification" content="hrzRO6LIbcwlQLFWRqrJxPPA270iJ_Ffe3JUOVoTqto" />
+    <!-- ربط ملف الـ CSS الخارجي -->
+    <link rel="stylesheet" href="style.css">
     
-    <!-- Google SEO Optimization Tags -->
-    <meta name="description" content="Osman Al Ali - Web Developer Portfolio. Official website for Osman Al Ali based in Beirut, Lebanon.">
-    <meta name="keywords" content="Osman Al Ali, Web Developer Beirut, Full Stack Developer Lebanon, Portfolio">
-    <meta name="google-site-verification" content="hrzRO6LIbcwlQLFWRqrJxPPA270iJ_Ffe3JUOVoTqto" />
-    
-    <!-- Open Graph / Facebook / WhatsApp Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://github.io">
-    <meta property="og:title" content="Osman Al Ali | Developer Portfolio">
-    <meta property="og:description" content="Official developer portfolio for Osman Al Ali. Designing, scripting, and deploying elite web platforms.">
-    <meta property="og:image" content="https://iologo.png">
+    <!-- كود داخلي إجباري لتدمير الزر الأبيض وحرقه للأبد ليصبح أخضر نيون مشع -->
+    <style>
+        .matrix-panel form button,
+        .matrix-panel form button[type="submit"],
+        form button,
+        form button[type="submit"],
+        .btn-prime {
+            display: block !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            text-align: center !important;
+            padding: 16px 24px !important;
+            border: 1px solid #00ff66 !important;
+            background-color: rgba(0, 255, 102, 0.04) !important;
+            background: rgba(0, 255, 102, 0.04) !important;
+            color: #00ff66 !important; /* فرض اللون الأخضر الفوسفوري */
+            text-transform: uppercase !important;
+            font-weight: 700 !important;
+            letter-spacing: 1.5px !important;
+            border-radius: 4px !important;
+            cursor: pointer !important;
+            margin-top: 24px !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+            transition: all 0.3s ease-in-out !important;
+            -webkit-appearance: none !important; /* منع أجهزة الآيفون من فرض زر أبيض تلقائي */
+            -moz-appearance: none !important;
+        }
 
-    <!-- ربط ملف الستايل الخارجي -->
-    <link rel="stylesheet" href="style.css?v=2000">
+        .matrix-panel form button[type="submit"]:hover,
+        form button[type="submit"]:hover,
+        .btn-prime:hover { 
+            background-color: #00ff66 !important;
+            background: #00ff66 !important;
+            color: #060a07 !important; 
+            box-shadow: 0 0 25px rgba(0, 255, 102, 0.5) !important;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Top Laser Accent Line -->
+    <!-- الخط الليزري العلوي الفخم -->
     <div class="laser-top-line"></div>
 
-    <!-- Background Ambient Glow Effects -->
-    <div class="ambient-glow spot-1"></div>
-    <div class="ambient-glow bg-glow-2"></div>
-
-    <!-- Fixed Header Navbar Row -->
+    <!-- الهيدر العلوي الثابت -->
     <header>
         <div class="header-container">
-            <!-- Left Navigation Wings -->
-            <div class="nav-wing-left desktop-nav">
-                <a href="#home" class="menu-anchor active">Home</a>
-                <a href="#projects" class="menu-anchor">Creations</a>
-            </div>
-
-            <!-- Perfect circular geometric logo center slot -->
+            <!-- اللوغو الأساسي الصغير للموقع فوق يسار -->
             <div class="portfolio-logo-box">
                 <img src="logo.png" alt="Osman Logo" class="brand-logo-img">
             </div>
-            
-            <!-- Right Navigation Wings -->
-            <div class="nav-wing-right desktop-nav">
-                <a href="#connect" class="menu-anchor">Connect</a>
-                <a href="mailto:oa2307368@gmail.com" class="social-nav-link">Email</a>
-                <a href="https://linkedin.com" target="_blank" class="social-nav-link">LinkedIn</a>
-                <a href="https://github.com" target="_blank" class="social-nav-link">GitHub</a>
-            </div>
 
-            <!-- Mobile Hamburger Toggle Trigger Menu Icon Button -->
+            <!-- زر المنيو للموبايل بأسطره الثلاثة -->
             <button class="hamburger-menu-btn" id="mobileMenuTrigger" aria-label="Toggle Menu">
                 <span class="bar-line"></span>
                 <span class="bar-line"></span>
                 <span class="bar-line"></span>
             </button>
+
+            <!-- القوائم الفرعية والأجنحة -->
+            <div class="nav-wing-left" id="navWingLeft">
+                <a href="#home" class="menu-anchor active">Home</a>
+                <a href="#projects" class="menu-anchor">Creations</a>
+            </div>
+            
+            <div class="nav-wing-right" id="navWingRight">
+                <a href="#connect" class="menu-anchor">Connect</a>
+                <a href="mailto:oa2307368@gmail.com" class="social-nav-link">Email</a>
+                <a href="https://linkedin.com" target="_blank" class="social-nav-link">LinkedIn</a>
+                <a href="https://github.com" target="_blank" class="social-nav-link">GitHub</a>
+            </div>
         </div>
     </header>
 
-    <!-- Mobile Fullscreen Overlay Drawer Navigation Navigation Panel Grid Chassis -->
-    <div class="mobile-overlay-navigation-panel" id="mobileOverlayMenu">
-        <div class="overlay-inner-wrapper">
-            <nav class="overlay-links-stack">
-                <a href="#home" class="overlay-anchor">Home</a>
-                <a href="#projects" class="overlay-anchor">Creations</a>
-                <a href="#connect" class="overlay-anchor">Connect</a>
-                <hr class="overlay-divider">
-                <a href="mailto:oa2307368@gmail.com" class="overlay-social-link">Email Direct</a>
-                <a href="https://linkedin.com" target="_blank" class="overlay-social-link">LinkedIn Space</a>
-                <a href="https://github.com" target="_blank" class="overlay-social-link">GitHub Source</a>
-            </nav>
-        </div>
-    </div>
+    <!-- الخلفيات المضيئة المشعة -->
+    <div class="ambient-glow spot-1"></div>
+    <div class="ambient-glow bg-glow-2"></div>
 
-    <!-- 1. HERO WORKSPACE MAIN DASHBOARD -->
+    <!-- قسم العرض الرئيسي (Hero Section) -->
     <main class="hero-dashboard" id="home">
-        <div class="hero-intro">
+        <div class="hero-intro-column">
             <div class="status-tag">
-                <span class="pulse-dot"></span> SECURE_FEED_ONLINE // READY
+                <span class="pulse-dot"></span>
+                SECURE_FEED_ONLINE // READY
             </div>
             <h1 class="hero-name">Osman<br>Al Ali</h1>
-            
-            <!-- Dynamic Typewriter Automated Banner Container -->
             <div class="dynamic-text-box">
-                <span class="static-prefix">I am a </span>
-                <span id="dynamic-target" class="text-glow-green">Full-Stack Developer</span>
-                <span class="terminal-cursor">|</span>
+                I am a <span class="text-glow-green">Full-Stack Developer</span><span class="terminal-cursor">|</span>
             </div>
-
             <p class="hero-paragraph">
                 Designing, scripting, and deploying elite web platforms. Converting complex logical frameworks into fast, responsive user interface viewports.
             </p>
-            
-            <div class="hero-btn-row">
-                <a href="#connect" class="btn btn-prime">Transmit Mail</a>
-            </div>
+            <a href="#connect" class="btn-prime">Transmit Mail</a>
         </div>
 
-        <!-- Tech Matrix Card Modules Chassis -->
-        <div class="matrix-panel">
+        <div class="matrix-panel glow-card">
             <div class="matrix-header">
                 <h3>ENGINEERING MODULES</h3>
                 <p>Toggle technical capability blocks</p>
             </div>
 
-            <div class="matrix-deck">
-                <div class="capability-card" id="displayCard">
-                    <div class="card-laser-accent"></div>
-                    <h4 class="card-headline">Frontend Engineering</h4>
-                    <p class="card-description">Building responsive user viewports with valid HTML5 structural frameworks and modular layout styles.</p>
-                    <div class="card-tags-row">
-                        <span>HTML5</span><span>CSS3 Layouts</span><span>JavaScript</span>
-                    </div>
-                </div>
+            <div class="selector-tabs-grid" id="tabsContainer">
+                <button class="tab-btn active" data-tab="client">Client Stacks</button>
+                <button class="tab-btn" data-tab="server">Server Logic</button>
+                <button class="tab-btn" data-tab="agile">Agile Tracks</button>
             </div>
 
-            <div class="selector-tabs-grid">
-                <button class="tab-btn active" data-stack="frontend">Client Stacks</button>
-                <button class="tab-btn" data-stack="backend">Server Logic</button>
-                <button class="tab-btn" data-stack="agile">Agile Tracks</button>
+            <div class="tab-content-wrapper">
+                <div class="capability-card active" id="tab-client">
+                    <h3 class="card-headline">Frontend Engineering</h3>
+                    <p class="card-description">
+                        Building responsive user viewports with valid HTML5 structural frameworks and modular layout styles.
+                    </p>
+                    <div class="fix-tags-layout">
+                        <span>HTML5</span>
+                        <span>CSS3 Layouts</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="capability-card" id="tab-server" style="display: none;">
+                    <h3 class="card-headline">Backend Systems</h3>
+                    <p class="card-description">
+                        Architecting robust server environments and database schemas with optimal data transfer protocols.
+                    </p>
+                    <div class="fix-tags-layout">
+                        <span>Node.js</span>
+                        <span>Express</span>
+                        <span>MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="capability-card" id="tab-agile" style="display: none;">
+                    <h3 class="card-headline">Project Workflows</h3>
+                    <p class="card-description">
+                        Managing version control parameters and establishing secure development operations pathways.
+                    </p>
+                    <div class="fix-tags-layout">
+                        <span>Git / DevOps</span>
+                        <span>Jira Architecture</span>
+                        <span>Agile</span>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
 
-    <!-- 2. CREATIONS DEPLOYMENTS DISPLAY GRID -->
+    <!-- قسم المشاريع المعروضة -->
     <section class="creations-section" id="projects">
         <div class="section-title">
             <span class="glow-subtitle">// METADATA_FEED</span>
             <h2>Deployed Solutions</h2>
         </div>
-
+        
         <div class="creations-grid">
-            <div class="exhibit-card">
-                <div class="side-accent-laser"></div>
+            <div class="exhibit-card glow-card">
                 <h3>Responsive Layout Frameworks</h3>
                 <p>Architecting smooth layout viewports using raw CSS structures and dynamic script media rules.</p>
-                <div class="exhibit-tags"><span>HTML5</span><span>CSS3 Core</span></div>
+                <div class="fix-tags-layout">
+                    <span>HTML5</span>
+                    <span>CSS3 Core</span>
+                </div>
             </div>
-            <div class="exhibit-card">
-                <div class="side-accent-laser"></div>
+
+            <div class="exhibit-card glow-card">
                 <h3>Server-Side Application Logic</h3>
                 <p>Building secure backend data pathways and asynchronous server routines using optimized Node environments.</p>
-                <div class="exhibit-tags"><span>Node.js</span><span>NPM Modules</span></div>
+                <div class="fix-tags-layout">
+                    <span>Node.js</span>
+                    <span>NPM Modules</span>
+                </div>
             </div>
-            <div class="exhibit-card">
-                <div class="side-accent-laser"></div>
+
+            <div class="exhibit-card glow-card">
                 <h3>Agile Project Trackers</h3>
                 <p>Coordinating software engineering sprints and task workflows inside structured Jira spaces.</p>
-                <div class="exhibit-tags"><span>Jira Software</span><span>Workflows</span></div>
+                <div class="fix-tags-layout">
+                    <span>Jira Software</span>
+                    <span>Workflows</span>
+                </div>
             </div>
         </div>
     </section>
 
-
-    <!-- ربط ملف الجافا سكريبت الخارجي المنفصل تماماً -->
-    <script src="script.js?v=2000"></script>
-</body>
-</html>
-    <!-- 3. INTERCONNECT CONNECTION DATA SECTION -->
+    <!-- قسم الاتصال والفورم العمودي المطور بالكامل -->
     <section class="creations-section" id="connect">
         <div class="section-title">
             <span class="glow-subtitle">// SECURE_TUNNEL</span>
             <h2>Commence Partnership</h2>
         </div>
 
-        <div class="split-connect-row">
-            <!-- Left Info Panel Column Box -->
-            <div class="side-metadata-protocol-card">
-                <div class="watermark-logo-bg">
-                    <img src="logo.png" alt="O Accent">
-                </div>
-                <div class="protocol-card-content">
-                    <h3>Directory Pins</h3>
-                    <p class="metadata-desc">Direct communications handles for local assignment routing or remote developer contracts.</p>
-                    <ul class="metadata-list">
-                        <li><strong>LOCATION NODE:</strong> Beirut, Lebanon</li>
-                        <li><strong>ROUTING EMAIL:</strong> oa2307368@gmail.com</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="matrix-panel glow-card">
+            <h3>Directory Pins</h3>
+            <p>Direct communications handles for local assignment routing or remote developer contracts.</p>
+            <p><strong>LOCATION NODE:</strong> Beirut, Lebanon</p>
+            <p><strong>ROUTING EMAIL:</strong> oa2307368@gmail.com</p>
 
-            <!-- Right Column - Form Chassis (اللي كان ناقص) -->
-            <div class="main-transmission-form-card">
-                <form action="#" class="protocol-form">
-                    <div class="form-group">
-                        <label>TRANSMITTER_NAME</label>
-                        <input type="text" placeholder="Enter your name..." required>
-                    </div>
-                    <div class="form-group">
-                        <label>RETURN_SIGNAL_EMAIL</label>
-                        <input type="email" placeholder="Enter your email..." required>
-                    </div>
-                    <div class="form-group">
-                        <label>MESSAGE_BODY_PAYLOAD</label>
-                        <textarea rows="5" placeholder="Write your transmission signal here..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn-prime form-submit-btn">Send Transmission</button>
-                </form>
-            </div>
+            <form action="#">
+                <label for="transmitter_name">Transmitter Name</label>
+                <input type="text" id="transmitter_name" placeholder="Enter your name..." required>
+
+                <label for="return_signal">Return Signal Email</label>
+                <input type="email" id="return_signal" placeholder="Enter your email..." required>
+
+                <label for="message_payload">Message Body Payload</label>
+                <textarea id="message_payload" rows="5" placeholder="Write your transmission signal here..." required></textarea>
+
+                <button type="submit" class="btn-prime">Send Transmission</button>
+            </form>
         </div>
     </section>
+
+    <!-- ربط ملف الـ JavaScript الخارجي المصلح -->
+    <script src="script.js"></script>
+</body>
+</html>
