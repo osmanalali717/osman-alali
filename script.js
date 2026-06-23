@@ -86,3 +86,11 @@ form.addEventListener('submit', async (e) => {
         submitBtn.disabled = false;
     }
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const firstCard = document.querySelector('.creations-grid .exhibit-card:first-child');
+    if (firstCard) {
+        firstCard.addEventListener('click', function() {
+            window.open('https://github.io', '_blank');
+        });
+    }
+});
